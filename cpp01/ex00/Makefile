@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
+#    By: jtu <jtu@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/05/30 17:21:16 by jtu              ###   ########.fr        #
+#    Updated: 2024/07/02 15:52:50 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,19 @@ NAME = megaphone
 
 SRCS = megaphone.cpp
 
-OBJS = ${SRCS:.c=.o}
+OBJS = ${SRCS:.cpp=.o}
+
+CC = g++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME}
 
 %.o: %.c
-	@cc $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 ${NAME}: ${OBJS}
-	@cc $(CFLAGS) $^ -o $@
+	@$(CC) $(CFLAGS) $^ -o $@
 
 clean:
 	@rm -f $(OBJS)
