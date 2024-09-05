@@ -3,20 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtu <jtu@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 17:46:26 by jtu               #+#    #+#             */
-/*   Updated: 2024/07/04 19:34:10 by jtu              ###   ########.fr       */
+/*   Updated: 2024/09/05 16:20:53 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
+void	Phonebook::add(void)
+{
+	while (true)
+	{
+		std::cout << "Enter first name:";
+		std::getline(std::cin, first_name)
+	}
+}
+
+void	Phonebook::search(void)
+{
+
+}
+
 int	main()
 {
-	phonebook	book;
+	Phonebook	book;
 	std::string	cmd;
-	
+
 	while (true)
 	{
 		std::cout << "Enter a command: ADD, SEARCH or EXIT" << std::endl;
