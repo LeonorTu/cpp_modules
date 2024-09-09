@@ -6,7 +6,7 @@
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 15:40:21 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/05 16:21:44 by jtu              ###   ########.fr       */
+/*   Updated: 2024/09/09 17:14:15 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,7 @@
 
 # include <iostream>
 # include <string>
-
-class	Phonebook
-{
-	private:
-		Contact	contacts[8];
-	public:
-		void	add(void);
-		void	search(void);
-};
+# include <iomanip>
 
 class	Contact
 {
@@ -35,43 +27,27 @@ class	Contact
 		std::string darkest_secret;
 
 	public:
-		std::string get_first_name()
-		{
-			return first_name;
-		}
-		std::string get_last_name()
-		{
-			return last_name;
-		}
-		std::string get_nick_name()
-		{
-			return nick_name;
-		}
-		std::string get_phone_number()
-		{
-			return phone_number;
-		}
-		std::string get_darkest_secret()
-		{
-			return darkest_secret;
-		}
-		void set_first_name(std::string name)
-		{
-			first_name = name;
-		}
-		void set_last_name(std::string name)
-		{
-			last_name = name;
-		}
-		void set_phone_number(std::string number)
-		{
-			phone_number = number;
-		}
-		void set_darkest_secret(std::string secret)
-		{
-			darkest_secret = secret;
-		}
+		std::string get_first_name();
+		std::string get_last_name();
+		std::string get_nick_name();
+		std::string get_phone_number();
+		std::string get_darkest_secret();
+		void set_first_name(std::string name);
+		void set_last_name(std::string name);
+		void set_nick_name(std::string name);
+		void set_phone_number(std::string number);
+		void set_darkest_secret(std::string secret);
 };
 
+class	Phonebook
+{
+	private:
+		Contact	contacts[8];
+		int		current_index;
+	public:
+		void	add(void);
+		void	search(void);
+		void	display_contacts(void);
+};
 
 #endif

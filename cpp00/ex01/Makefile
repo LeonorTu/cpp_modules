@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jtu <jtu@student.42.fr>                    +#+  +:+       +#+         #
+#    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/07/02 15:52:50 by jtu              ###   ########.fr        #
+#    Updated: 2024/09/09 17:13:30 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = phonebook
 
-SRCS = megaphone.cpp
+SRCS = phonebook.cpp\
+		contact.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
