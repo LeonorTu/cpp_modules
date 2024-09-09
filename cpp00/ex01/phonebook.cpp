@@ -6,7 +6,7 @@
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 17:46:26 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/09 17:17:32 by jtu              ###   ########.fr       */
+/*   Updated: 2024/09/09 18:41:52 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,32 +108,43 @@ void	Phonebook::display_contacts(void)
 			<< std::setw(10) << "Nickname" << std::endl;
 	while (i < 8)
 	{
+		if (contacts[i].get_first_name().empty())
+			break;
 		std::cout << std::setw(10) << i << "|"
 				<< std::setw(10) << truncate_string(contacts[i].get_first_name()) << "|"
 				<< std::setw(10) << truncate_string(contacts[i].get_last_name()) << "|"
 				<< std::setw(10) << truncate_string(contacts[i].get_nick_name()) << std::endl;
+		i++;
 	}
 }
 
 
 void	Phonebook::search(void)
 {
-	int	input;
+	std::string	input;
+	int	index;
 
 	display_contacts();
 	while (true)
 	{
-		std::cout << "Enter the index of the contact" << std::endl;
-		std::cin >> input; //might cause problems ex: 1  haha
+		std::cout << "Enter the index of the contact or enter -1 to quit" << std::endl;
+		std::getline(std::cin, input);
 		if (std::cin.eof())
 			break ;
-		if (input >= 0 && input <= 7)
+		std::istringstream iss(input);; //something wrong here
+		if (!(iss >> index) || !iss.eof())
 		{
-			std::cout << "First Name: " << contacts[input].get_first_name() << std::endl;
-			std::cout << "Last Name: " << contacts[input].get_last_name() << std::endl;
-			std::cout << "Nickname: " << contacts[input].get_nick_name() << std::endl;
-			std::cout << "Phone Number: " << contacts[input].get_phone_number()<< std::endl;
-			std::cout << "Darkest Secret: " << contacts[input].get_darkest_secret() << std::endl;
+			std::cout << "Invalid index. Please try again!" << std::endl;
+			continue ;
+		}
+		std::cout << "index:" << index;
+		if (index >= 0 && index <= 7 && !contacts[index].get_first_name().empty())
+		{
+			std::cout << "First Name: " << contacts[index].get_first_name() << std::endl;
+			std::cout << "Last Name: " << contacts[index].get_last_name() << std::endl;
+			std::cout << "Nickname: " << contacts[index].get_nick_name() << std::endl;
+			std::cout << "Phone Number: " << contacts[index].get_phone_number()<< std::endl;
+			std::cout << "Darkest Secret: " << contacts[index].get_darkest_secret() << std::endl;
 			break;
 		}
 		else
@@ -157,10 +168,9 @@ int	main()
 		else if (cmd == "SEARCH")
 			book.search();
 		else if (cmd == "EXIT")
-			return (0);
+			break ;
 		else
 			std::cout << "Invalid command. Please try again!" << std::endl;
-
 	}
 	return (0);
 }
