@@ -6,7 +6,7 @@
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 15:40:21 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/09 17:49:14 by jtu              ###   ########.fr       */
+/*   Updated: 2024/09/10 13:52:26 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ class	Phonebook
 		Contact	contacts[8];
 		int		current_index;
 	public:
-		Phonebook() : current_index(0) {}
-		
+		Phonebook(): current_index(0) {}
+
 		void	add(void);
 		void	search(void);
 		void	display_contacts(void);

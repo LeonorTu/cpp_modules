@@ -6,31 +6,35 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/09/09 17:32:16 by jtu              ###   ########.fr        #
+#    Updated: 2024/09/10 14:08:17 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS = phonebook.cpp\
+SRCS =	main.cpp \
+		phonebook.cpp \
 		contact.cpp
 
-OBJS = ${SRCS:.cpp=.o}
+OBJS_DIR = ./obj
 
-CC = g++
+OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
+
+CC = c++
 
 FLAGS = -Wall -Wextra -Werror -g
 
-all: ${NAME}
+all: $(NAME)
 
-%.o: %.c
+$(OBJS_DIR)/%.o: %.cpp
+	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-${NAME}: ${OBJS}
+$(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $^ -o $@
 
 clean:
-	@rm -f $(OBJS)
+	@rm -rf $(OBJS_DIR)
 	@rm -rf *.dSYM
 	@rm -rf .vscode
 	@rm -rf .DS_Store

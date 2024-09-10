@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jtu <jtu@student.42.fr>                    +#+  +:+       +#+         #
+#    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/07/02 15:52:50 by jtu              ###   ########.fr        #
+#    Updated: 2024/09/10 14:08:56 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,22 +14,25 @@ NAME = megaphone
 
 SRCS = megaphone.cpp
 
-OBJS = ${SRCS:.cpp=.o}
+OBJS_DIR = ./obj
 
-CC = g++
+OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CC = c++
 
-all: ${NAME}
+FLAGS = -Wall -Wextra -Werror -g
 
-%.o: %.c
+all: $(NAME)
+
+$(OBJS_DIR)/%.o: %.cpp
+	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-${NAME}: ${OBJS}
+$(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $^ -o $@
 
 clean:
-	@rm -f $(OBJS)
+	@rm -rf $(OBJS_DIR)
 	@rm -rf *.dSYM
 	@rm -rf .vscode
 	@rm -rf .DS_Store
