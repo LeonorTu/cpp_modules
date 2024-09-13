@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 15:48:13 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/13 17:19:47 by jtu              ###   ########.fr       */
+/*   Created: 2024/09/13 16:07:54 by jtu               #+#    #+#             */
+/*   Updated: 2024/09/13 17:17:11 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-Zombie*	newZombie( std::string name )
+# include <string>
+# include <iostream>
+
+class	Zombie
 {
-	Zombie	*new_zombie = NULL;
-	
-	if( !(new_zombie  = new Zombie(name) ))
-	{
-		std::cout << "Error: out of memory." << std::endl;
-		exit (1);
-	}
-	return (new_zombie);
-}
+	private:
+		std::string	name;
+
+	public:
+		Zombie();
+		~Zombie();
+		void	set_zombie_name(std::string zombie_name);
+		void	announce( void );
+};
+
+Zombie*	zombieHorde( int N, std::string name );
+
+#endif

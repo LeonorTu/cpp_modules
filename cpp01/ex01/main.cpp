@@ -1,25 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 15:48:13 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/13 17:19:47 by jtu              ###   ########.fr       */
+/*   Created: 2024/09/13 16:07:58 by jtu               #+#    #+#             */
+/*   Updated: 2024/09/13 16:08:54 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie*	newZombie( std::string name )
-{
-	Zombie	*new_zombie = NULL;
-	
-	if( !(new_zombie  = new Zombie(name) ))
-	{
-		std::cout << "Error: out of memory." << std::endl;
-		exit (1);
-	}
-	return (new_zombie);
-}

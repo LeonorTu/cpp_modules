@@ -6,7 +6,7 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/09/13 16:07:04 by jtu              ###   ########.fr        #
+#    Updated: 2024/09/13 16:08:31 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME = zombie
 
 SRCS =	main.cpp \
 		Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp
+		zombieHorde.cpp
 
 OBJS_DIR = ./obj
 

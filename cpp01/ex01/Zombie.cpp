@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 15:48:13 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/13 17:19:47 by jtu              ###   ########.fr       */
+/*   Created: 2024/09/13 16:07:52 by jtu               #+#    #+#             */
+/*   Updated: 2024/09/13 17:22:31 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie*	newZombie( std::string name )
+Zombie::Zombie()
 {
-	Zombie	*new_zombie = NULL;
-	
-	if( !(new_zombie  = new Zombie(name) ))
-	{
-		std::cout << "Error: out of memory." << std::endl;
-		exit (1);
-	}
-	return (new_zombie);
+}
+
+Zombie::~Zombie()
+{
+	std::cout << name << " has been destroyed." << std::endl;
+}
+
+void	Zombie::set_zombie_name( std::string zombie_name )
+{
+	name = zombie_name;
+}
+
+void	Zombie::announce( void )
+{
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

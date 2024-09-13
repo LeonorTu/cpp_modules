@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 15:48:13 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/13 17:19:47 by jtu              ###   ########.fr       */
+/*   Created: 2024/09/13 16:19:38 by jtu               #+#    #+#             */
+/*   Updated: 2024/09/13 17:22:24 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie*	newZombie( std::string name )
+Zombie*	zombieHorde( int N, std::string name )
 {
-	Zombie	*new_zombie = NULL;
-	
-	if( !(new_zombie  = new Zombie(name) ))
+	Zombie*	horde = NULL;
+
+	if (N <= 0)
+		return (0);
+	horde = new Zombie[N];
+	while (--N >= 0)
 	{
-		std::cout << "Error: out of memory." << std::endl;
-		exit (1);
+		horde[N].set_zombie_name(name);
 	}
-	return (new_zombie);
+	return (horde);
 }
