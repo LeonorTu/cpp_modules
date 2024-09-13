@@ -6,11 +6,11 @@
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 12:07:58 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/09 15:50:11 by jtu              ###   ########.fr       */
+/*   Updated: 2024/09/11 16:17:07 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Contact.hpp"
 
 std::string	Contact::get_first_name()
 {

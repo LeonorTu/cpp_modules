@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 15:40:21 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/10 14:58:36 by jtu              ###   ########.fr       */
+/*   Created: 2024/09/11 16:16:36 by jtu               #+#    #+#             */
+/*   Updated: 2024/09/12 14:18:08 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-# include <iostream>
 # include <string>
-# include <iomanip>
 
 class	Contact
 {
@@ -37,18 +35,6 @@ class	Contact
 		void set_nick_name(std::string name);
 		void set_phone_number(std::string number);
 		void set_darkest_secret(std::string secret);
-};
-
-class	Phonebook
-{
-	private:
-		Contact	contacts[8];
-		int		current_index;
-	public:
-		Phonebook(): current_index(0) {}
-		void	add(void);
-		void	search(void);
-		void	display_contacts(void);
 };
 
 #endif

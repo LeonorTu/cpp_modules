@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 17:46:26 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/10 13:53:50 by jtu              ###   ########.fr       */
+/*   Updated: 2024/09/13 16:04:06 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
-void	Phonebook::add(void)
+void	PhoneBook::add(void)
 {
 	std::string	input;
 
@@ -97,7 +97,7 @@ static std::string	truncate_string(std::string str)
 	return (str);
 }
 
-void	Phonebook::display_contacts(void)
+void	PhoneBook::display_contacts(void)
 {
 	int	i;
 
@@ -118,7 +118,7 @@ void	Phonebook::display_contacts(void)
 	}
 }
 
-void	Phonebook::search(void)
+void	PhoneBook::search(void)
 {
 	std::string	input;
 	int	index;

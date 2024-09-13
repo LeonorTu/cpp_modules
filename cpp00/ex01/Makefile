@@ -6,15 +6,15 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/09/11 12:59:43 by jtu              ###   ########.fr        #
+#    Updated: 2024/09/11 16:19:50 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
 SRCS =	main.cpp \
-		phonebook.cpp \
-		contact.cpp
+		PhoneBook.cpp \
+		Contact.cpp
 
 OBJS_DIR = ./obj
 

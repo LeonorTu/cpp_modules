@@ -6,15 +6,15 @@
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 13:54:13 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/10 13:54:26 by jtu              ###   ########.fr       */
+/*   Updated: 2024/09/13 16:04:56 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int	main()
 {
-	Phonebook	book;
+	PhoneBook	book;
 	std::string	cmd;
 
 	while (true)
