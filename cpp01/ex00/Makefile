@@ -6,7 +6,7 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/09/13 16:07:04 by jtu              ###   ########.fr        #
+#    Updated: 2024/09/16 16:38:01 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
