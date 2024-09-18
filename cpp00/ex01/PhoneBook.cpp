@@ -6,7 +6,7 @@
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 17:46:26 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/13 16:04:06 by jtu              ###   ########.fr       */
+/*   Updated: 2024/09/18 16:28:30 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	PhoneBook::add(void)
 		if (std::cin.eof())
 			return ;
 		if (input.empty())
-			std::cout << "Input can't be empty. Please try agian!" << std::endl;
+			std::cerr << "Input can't be empty. Please try agian!" << std::endl;
 		else
 		{
 			contacts[current_index].set_first_name(input);
@@ -37,7 +37,7 @@ void	PhoneBook::add(void)
 		if (std::cin.eof())
 			return ;
 		if (input.empty())
-			std::cout << "Input can't be empty. Please try agian!" << std::endl;
+			std::cerr << "Input can't be empty. Please try agian!" << std::endl;
 		else
 		{
 			contacts[current_index].set_last_name(input);
@@ -51,7 +51,7 @@ void	PhoneBook::add(void)
 		if (std::cin.eof())
 			return ;
 		if (input.empty())
-			std::cout << "Input can't be empty. Please try agian!" << std::endl;
+			std::cerr << "Input can't be empty. Please try agian!" << std::endl;
 		else
 		{
 			contacts[current_index].set_nick_name(input);
@@ -65,7 +65,7 @@ void	PhoneBook::add(void)
 		if (std::cin.eof())
 			return ;
 		if (input.empty())
-			std::cout << "Input can't be empty. Please try agian!" << std::endl;
+			std::cerr << "Input can't be empty. Please try agian!" << std::endl;
 		else
 		{
 			contacts[current_index].set_phone_number(input);
@@ -79,7 +79,7 @@ void	PhoneBook::add(void)
 		if (std::cin.eof())
 			return ;
 		if (input.empty())
-			std::cout << "Input can't be empty. Please try agian!" << std::endl;
+			std::cerr << "Input can't be empty. Please try agian!" << std::endl;
 		else
 		{
 			contacts[current_index].set_darkest_secret(input);
@@ -121,7 +121,7 @@ void	PhoneBook::display_contacts(void)
 void	PhoneBook::search(void)
 {
 	std::string	input;
-	int	index;
+	int			index;
 
 	display_contacts();
 	while (true)
@@ -133,7 +133,7 @@ void	PhoneBook::search(void)
 		std::istringstream iss(input);
 		if (!(iss >> index) || !iss.eof())
 		{
-			std::cout << "Invalid index. Please try again!" << std::endl;
+			std::cerr << "Invalid index. Please try again!" << std::endl;
 			continue ;
 		}
 		if (index >= 0 && index <= 7 && !contacts[index].get_first_name().empty())
@@ -148,6 +148,6 @@ void	PhoneBook::search(void)
 		else if (index == -1)
 			break ;
 		else
-			std::cout << "Invalid index. Please try again!" << std::endl;
+			std::cerr << "Invalid index. Please try again!" << std::endl;
 	}
 }

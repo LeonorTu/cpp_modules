@@ -6,15 +6,13 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/09/16 18:16:26 by jtu              ###   ########.fr        #
+#    Updated: 2024/09/18 12:54:00 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = main
 
-SRCS =	main.cpp \
-		Zombie.cpp \
-		zombieHorde.cpp
+SRCS =	main.cpp
 
 OBJS_DIR = ./obj
 
@@ -22,7 +20,7 @@ OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
