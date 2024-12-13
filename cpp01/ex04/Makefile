@@ -6,16 +6,13 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/09/19 15:26:12 by jtu              ###   ########.fr        #
+#    Updated: 2024/12/12 09:32:21 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = violence
+NAME = filereplacer
 
 SRCS =	main.cpp \
-		Weapon.cpp \
-		HumanA.cpp \
-		HumanB.cpp \
 
 OBJS_DIR = ./obj
 
