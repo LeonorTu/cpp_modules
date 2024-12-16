@@ -6,13 +6,14 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/12/13 15:55:36 by jtu              ###   ########.fr        #
+#    Updated: 2024/12/16 15:20:36 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = filereplacer
 
 SRCS =	main.cpp \
+		replace.cpp
 
 OBJS_DIR = ./obj
 
