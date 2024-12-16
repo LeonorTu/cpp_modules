@@ -11,6 +11,5 @@ int	main(int argc, char *argv[])
 	std::string	filename = argv[1];
 	std::string	s1 = argv[2];
 	std::string	s2 = argv[3];
-	replace(filename, s1, s2);
-	return (0);
+	return (replace(filename, s1, s2));
 }

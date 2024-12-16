@@ -1,17 +1,18 @@
 #include "replace.hpp"
 
-void replace(const std::string& filename, const std::string& s1, const std::string& s2)
+int	replace(const std::string& filename, const std::string& s1, const std::string& s2)
 {
 	std::ifstream infile(filename);
 	if (!infile.is_open()){
 		std::cerr << "Failed to open the input file." << std::endl;
+		return (1);
 	}
 	std::string outfilename = filename + ".replace";
 	std::ofstream outfile(outfilename);
 	if (!outfile.is_open()){
 		std::cerr << "Failed to create the output file." << std::endl;
+		return (1);
 	}
-
 	std::stringstream buffer;
 	buffer << infile.rdbuf();
 	std::string content = buffer.str();
@@ -27,4 +28,5 @@ void replace(const std::string& filename, const std::string& s1, const std::stri
 	}
 	result += content.substr(pos);
 	outfile << result;
+	return (0);
 }
