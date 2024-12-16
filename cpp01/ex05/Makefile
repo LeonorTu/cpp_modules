@@ -6,13 +6,14 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/12/13 15:55:36 by jtu              ###   ########.fr        #
+#    Updated: 2024/12/16 14:09:07 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = filereplacer
+NAME = harl
 
 SRCS =	main.cpp \
+		Harl.cpp
 
 OBJS_DIR = ./obj
 
