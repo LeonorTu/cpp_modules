@@ -6,11 +6,11 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/09/16 18:16:26 by jtu              ###   ########.fr        #
+#    Updated: 2024/12/16 15:33:50 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = zombieHorde
 
 SRCS =	main.cpp \
 		Zombie.cpp \

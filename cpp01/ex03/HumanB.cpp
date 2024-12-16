@@ -6,7 +6,7 @@
 /*   By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 12:30:41 by jtu               #+#    #+#             */
-/*   Updated: 2024/09/19 14:42:20 by jtu              ###   ########.fr       */
+/*   Updated: 2024/12/16 15:41:40 by jtu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	HumanB::attack()
 	if (!weapon->getType().empty())
 		std::cout << name << " attacks with their " << weapon->getType() << std::endl;
 	else
-		std::cout << name << "is not armed" << std::endl;
+		std::cout << name << " is not armed" << std::endl;
 }
 
 void	HumanB::setWeapon(Weapon& new_weapon)
