@@ -35,12 +35,17 @@ void	Harl::complain( std::string level ){
 			break ;
 		}
 	}
-	if (levelIndex == -1){
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return ;
+	switch (levelIndex)
+	{
+		case -1:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+				break;
+		default:
+				for (int i = levelIndex; i < 4; i++){
+					(this->*functions[i])();
+					std::cout << std::endl;
+				}
+				break;
 	}
-	for (int i = levelIndex; i < 4; i++){
-		(this->*functions[i])();
-		std::cout << std::endl;
-	}
+
 }
