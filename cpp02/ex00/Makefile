@@ -6,14 +6,14 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/12/16 14:31:33 by jtu              ###   ########.fr        #
+#    Updated: 2024/12/17 14:34:41 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = a.out
 
 SRCS =	main.cpp \
-		Harl.cpp
+		Fixed.cpp
 
 OBJS_DIR = ./obj
 
