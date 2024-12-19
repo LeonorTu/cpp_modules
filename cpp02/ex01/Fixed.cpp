@@ -8,7 +8,6 @@ Fixed::Fixed()
 
 Fixed::Fixed(const int n)
 {
-	std::cout << "test: " << value; //
 	std::cout << "Int constructor called" << std::endl;
 	this->value = n << this->fractionalBits;
 }
@@ -16,7 +15,7 @@ Fixed::Fixed(const int n)
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
-	float	rounded = roundf((value * (1 << this->fractionalBits)));
+	float	rounded = roundf((n * (1 << this->fractionalBits)));
 	this->value = static_cast<int>(rounded);
 }
 
@@ -43,7 +42,6 @@ Fixed&	Fixed::operator=(const Fixed& other)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return value;
 }
 
