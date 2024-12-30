@@ -13,6 +13,7 @@ ClapTrap::ClapTrap(const std::string& str)
   attackDamage = 0;
   std::cout << "Created ClapTrap " << name << std::endl;
 }
+
 ClapTrap::ClapTrap(const ClapTrap& other){
   name = other.name;
   hitPoints = other.hitPoints;
@@ -24,6 +25,16 @@ ClapTrap::ClapTrap(const ClapTrap& other){
 ClapTrap::~ClapTrap()
 {
   std::cout << "Destroyed ClapTrap " << name << std::endl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+  name = other.name;
+  hitPoints = other.hitPoints;
+  energyPoints = other.energyPoints;
+  attackDamage = other.attackDamage;
+  std::cout << "ClapTrap " << name << " assignment constructor called." << std::endl;
+  return *this;
 }
 
 void ClapTrap::attack(const std::string& target)
