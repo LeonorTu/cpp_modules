@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -12,6 +13,7 @@ class Cat : public Animal
 		~Cat();
 		Cat& operator=(const Cat& other);
 		void makeSound() const override;
+		Brain* getBrain();
 };
 
 #endif
