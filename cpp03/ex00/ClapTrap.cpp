@@ -7,7 +7,7 @@ ClapTrap::ClapTrap():name("default"), hitPoints(10), energyPoints(10), attackDam
 
 ClapTrap::ClapTrap(const std::string& str)
 {
-  name = str;
+
   hitPoints = 10;
   energyPoints = 10;
   attackDamage = 0;
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(const ClapTrap& other){
   hitPoints = other.hitPoints;
   energyPoints = other.energyPoints;
   attackDamage = other.attackDamage;
-  std::cout << "ClapTrap" << name << "copy constructor called." << std::endl;
+  std::cout << "ClapTrap " << name << " copy constructor called." << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -39,8 +39,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 void ClapTrap::attack(const std::string& target)
 {
-  if (hitPoints == 0 && energyPoints == 0)
-    std::cout << "ClapTrap " << name << " is out of energy or hit points!" << std::endl;
+  if (energyPoints == 0)
+    std::cout << "ClapTrap " << name << " has no energy left to attack.\n";
+  else if (hitPoints == 0)
+    std::cout << "ClapTrap " << name << " has already died. Cannot attack anymore.\n";
   else
   {
     energyPoints--;
@@ -52,7 +54,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
   if (hitPoints == 0)
     std::cout << "ClapTrap " << name << " has already died. Can't take more damage." << std::endl;
-  if (amount > hitPoints)
+  if (amount >= hitPoints)
   {
     hitPoints = 0;
     std::cout << "ClapTrap " << name << " is dead!" << std::endl;

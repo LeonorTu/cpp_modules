@@ -11,7 +11,7 @@ FragTrap::FragTrap(): ClapTrap()
 
 FragTrap::FragTrap(const std::string& str): ClapTrap(str)
 {
-  name = str;
+
   hitPoints = 100;
   energyPoints = 100;
   attackDamage = 30;
@@ -24,7 +24,7 @@ FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
   hitPoints = other.hitPoints;
   energyPoints = other.energyPoints;
   attackDamage = other.attackDamage;
-  std::cout << "FragTrap" << name << "copy constructor called." << std::endl;
+  std::cout << "FragTrap " << name << " copy constructor called." << std::endl;
 }
 
 FragTrap::~FragTrap()
