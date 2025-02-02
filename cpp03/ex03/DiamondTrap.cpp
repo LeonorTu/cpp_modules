@@ -2,9 +2,9 @@
 
 DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap()
 {
-  hitPoints = 100;
-  energyPoints = 50;
-  attackDamage = 30;
+  hitPoints = FragTrap::hitPoints;
+  energyPoints = ScavTrap::energyPoints;
+  attackDamage = FragTrap::attackDamage;
   std::cout << "DiamondTrap default constructor called." << std::endl;
 }
 

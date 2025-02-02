@@ -5,14 +5,14 @@
 
 int main() {
    // Test constructors
-   std::cout << "\n=== Testing Constructors ===\n";
+   std::cout << "\n=== Testing Constructors ===" << std::endl;
    DiamondTrap d1("D1");
    DiamondTrap d2(d1);
    DiamondTrap d3;
    d3 = d1;
 
    // Test functionalities
-   std::cout << "\n=== Testing Functions ===\n";
+   std::cout << "\n=== Testing Functions ===\n" << std::endl;
    d1.attack("target");
    d1.takeDamage(30);
    d1.beRepaired(20);
@@ -20,6 +20,6 @@ int main() {
    d1.highFivesGuys();
    d1.whoAmI();
 
-   std::cout << "\n=== Testing Destruction ===\n";
+   std::cout << "\n=== Testing Destruction ==="  << std::endl;
    return 0;
 }

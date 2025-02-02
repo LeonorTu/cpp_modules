@@ -4,17 +4,14 @@
 
 int main()
 {
-    std::cout << "Creating a FragTrap:" << std::endl;
+    std::cout << "=== Testing FragTrap ===" << std::endl;
     FragTrap frag("Fraggy");
     frag.attack("enemy");
     frag.highFivesGuys();
-     // FragTrap and ClapTrap destructors will be called here
 
-
-    std::cout << "Creating a ScavTrap:" << std::endl;
+    std::cout << "=== Testing ScavTrap ===" << std::endl;
     ScavTrap scav("Scavvy");
     scav.attack("enemy");
-    // ScavTrap and ClapTrap destructors will be called here
 
     return 0;
 }

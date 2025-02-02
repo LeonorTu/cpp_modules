@@ -5,36 +5,19 @@ ClapTrap::ClapTrap():name("default"), hitPoints(10), energyPoints(10), attackDam
   std::cout << "ClapTrap default constructor called." << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string& str)
+ClapTrap::ClapTrap(const std::string& str):name(str), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-
-  hitPoints = 10;
-  energyPoints = 10;
-  attackDamage = 0;
   std::cout << "Created ClapTrap " << name << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other){
-  name = other.name;
-  hitPoints = other.hitPoints;
-  energyPoints = other.energyPoints;
-  attackDamage = other.attackDamage;
+ClapTrap::ClapTrap(const ClapTrap& other): name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage)
+{
   std::cout << "ClapTrap " << name << " copy constructor called." << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
   std::cout << "Destroyed ClapTrap " << name << std::endl;
-}
-
-ClapTrap& ClapTrap::operator=(const ClapTrap& other)
-{
-  name = other.name;
-  hitPoints = other.hitPoints;
-  energyPoints = other.energyPoints;
-  attackDamage = other.attackDamage;
-  std::cout << "ClapTrap " << name << " assignment constructor called." << std::endl;
-  return *this;
 }
 
 void ClapTrap::attack(const std::string& target)

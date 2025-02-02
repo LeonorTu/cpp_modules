@@ -8,10 +8,9 @@ FragTrap::FragTrap(): ClapTrap()
   std::cout << "FragTrap default constructor called." << std::endl;
 }
 
-
 FragTrap::FragTrap(const std::string& str): ClapTrap(str)
 {
-
+  name = str;
   hitPoints = 100;
   energyPoints = 100;
   attackDamage = 30;
@@ -43,5 +42,8 @@ FragTrap& FragTrap::operator=(const FragTrap& other)
 
 void FragTrap::highFivesGuys()
 {
-  std::cout << "FragTrap " << name << " requests a high five!" << std::endl;
+  if (energyPoints == 0 || hitPoints == 0)
+    std::cout << "FrahTrap " << name << " has no energy point or hit point left to give a high five.\n";
+  else
+    std::cout << "FragTrap " << name << " requests a high five!" << std::endl;
 }
