@@ -30,7 +30,7 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 {
-  std::cout << "DiamondTrap " << name << " assignation operator called." << std::endl;
+  std::cout << "DiamondTrap " << name << " assignment operator called." << std::endl;
   if (this != &other) {
     ClapTrap::operator=(other);
     name = other.name;

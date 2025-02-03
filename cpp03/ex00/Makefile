@@ -6,7 +6,7 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/12/17 14:34:41 by jtu              ###   ########.fr        #
+#    Updated: 2025/02/03 16:40:15 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME = ClapTrap
 
 SRCS =	main.cpp \
 		ClapTrap.cpp
+
+INCS = ClapTrap.hpp
 
 OBJS_DIR = ./obj
 
@@ -25,12 +27,12 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(OBJS_DIR)/%.o: %.cpp
+$(OBJS_DIR)/%.o: %.cpp $(INCS)
 	mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+$(NAME): $(OBJS) $(INCS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 clean:
 	@rm -rf $(OBJS_DIR)

@@ -6,7 +6,7 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2024/12/30 15:42:43 by jtu              ###   ########.fr        #
+#    Updated: 2025/02/03 16:40:44 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME = ScavTrap
 SRCS =	main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
+
+INCS = ClapTrap.hpp ScavTrap.hpp
 
 OBJS_DIR = ./obj
 
@@ -26,12 +28,12 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(OBJS_DIR)/%.o: %.cpp
+$(OBJS_DIR)/%.o: %.cpp $(INCS)
 	mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+$(NAME): $(OBJS) $(INCS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 clean:
 	@rm -rf $(OBJS_DIR)

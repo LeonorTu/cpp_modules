@@ -19,10 +19,6 @@ FragTrap::FragTrap(const std::string& str): ClapTrap(str)
 
 FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
 {
-  name = other.name;
-  hitPoints = other.hitPoints;
-  energyPoints = other.energyPoints;
-  attackDamage = other.attackDamage;
   std::cout << "FragTrap " << name << " copy constructor called." << std::endl;
 }
 
@@ -33,7 +29,7 @@ FragTrap::~FragTrap()
 
 FragTrap& FragTrap::operator=(const FragTrap& other)
 {
-  std::cout << "FragTrap " << name << " assignation operator called." << std::endl;
+  std::cout << "FragTrap " << name << " assignment operator called." << std::endl;
   if (this != &other) {
       ClapTrap::operator=(other);
   }
@@ -42,7 +38,7 @@ FragTrap& FragTrap::operator=(const FragTrap& other)
 
 void FragTrap::highFivesGuys()
 {
-  if (energyPoints == 0 || hitPoints == 0)
+  if (energyPoints <= 0 || hitPoints <= 0)
     std::cout << "FrahTrap " << name << " has no energy point or hit point left to give a high five.\n";
   else
     std::cout << "FragTrap " << name << " requests a high five!" << std::endl;

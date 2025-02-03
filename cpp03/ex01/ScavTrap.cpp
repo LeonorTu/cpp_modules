@@ -18,10 +18,6 @@ ScavTrap::ScavTrap(const std::string& str): ClapTrap(str)
 
 ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
 {
-  name = other.name;
-  hitPoints = other.hitPoints;
-  energyPoints = other.energyPoints;
-  attackDamage = other.attackDamage;
   std::cout << "ScavTrap " << name << " copy constructor called." << std::endl;
 }
 
@@ -32,7 +28,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-  std::cout << "ScavTrap " << name << " assignation operator called." << std::endl;
+  std::cout << "ScavTrap " << name << " assignment operator called." << std::endl;
   if (this == &other)
     return *this;
   ClapTrap::operator=(other);
@@ -41,9 +37,9 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 
 void ScavTrap::attack(const std::string& target)
 {
-  if (energyPoints == 0)
+  if (energyPoints <= 0)
     std::cout << "ScavTrap " << name << " has no energy left to attack.\n";
-  else if (hitPoints == 0)
+  else if (hitPoints <= 0)
     std::cout << "ScavTrap " << name << " has already died. Cannot attack anymore.\n";
   else
   {
@@ -54,7 +50,7 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate()
 {
-  if (energyPoints == 0 || hitPoints == 0)
+  if (energyPoints <= 0 || hitPoints <= 0)
     std::cout << "ScavTrap " << name << " has no energy point or hit point left to keep the gate.\n";
   else
     std::cout << "ScavTrap " << name << " is now in Gate keeper mode.\n";
