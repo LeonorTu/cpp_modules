@@ -7,13 +7,15 @@
 
 class Cat : public Animal
 {
+	private:
+		Brain* brain;
 	public:
 		Cat();
 		Cat(const Cat& other);
 		~Cat();
 		Cat& operator=(const Cat& other);
 		void makeSound() const override;
-		Brain* getBrain();
+		Brain* getBrain() const;
 };
 
 #endif
