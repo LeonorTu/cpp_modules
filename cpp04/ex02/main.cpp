@@ -43,7 +43,7 @@ int main()
 	std::cout << "Cat3's first idea: " << cat2.getBrain()->getIdea(0) << std::endl;
 	std::cout << "Cat3's second idea: " << cat2.getBrain()->getIdea(1) << std::endl;
 
-	const Animal* test = new Animal(); // allowed
-	test->makeSound();
+	// const Animal* test = new Animal(); // not allowed
+	// test->makeSound();
 	return 0;
 }
