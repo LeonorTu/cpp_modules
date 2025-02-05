@@ -40,11 +40,8 @@ int main()
 	std::cout << "Cat2's second idea: " << cat2.getBrain()->getIdea(1) << std::endl;
 	Cat cat3;
 	cat3 = cat1;
-	std::cout << "Cat3's first idea: " << cat2.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Cat3's second idea: " << cat2.getBrain()->getIdea(1) << std::endl;
+	std::cout << "Cat3's first idea: " << cat3.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Cat3's second idea: " << cat3.getBrain()->getIdea(1) << std::endl;
 
-	const Animal* test = new Animal(); // allowed
-	test->makeSound();
-	delete test;
 	return 0;
 }
