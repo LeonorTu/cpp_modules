@@ -45,5 +45,6 @@ int main()
 
 	const Animal* test = new Animal(); // allowed
 	test->makeSound();
+	delete test;
 	return 0;
 }
