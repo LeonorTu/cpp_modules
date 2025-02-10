@@ -7,9 +7,9 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(const std::string& string, int number): name(string)
 {
 	std::cout << "Bureaucrat copy constructor called" << std::endl;
-	if (grade < 1)
+	if (number < 1)
 		throw GradeTooHighException("Grade is too high!");
-	else if (grade > 150)
+	else if (number > 150)
 		throw GradeTooLowException("Grade is too low!");
 	grade = number;
 }
@@ -31,7 +31,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat" << name << " destructor called" << std::endl;
+	std::cout << "Bureaucrat " << name << " destructor called" << std::endl;
 }
 
 std::string	Bureaucrat::getName() const

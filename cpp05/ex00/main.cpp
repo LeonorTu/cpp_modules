@@ -2,7 +2,7 @@
 
 int main() {
     try {
-        Bureaucrat b1("Alice", 2);
+        Bureaucrat b1("Amy", 2);
         std::cout << b1 << std::endl;
 
         b1.incrementGrade();  // Should succeed (grade becomes 1)
