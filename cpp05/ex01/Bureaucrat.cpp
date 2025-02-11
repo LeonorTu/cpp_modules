@@ -7,7 +7,7 @@ Bureaucrat::Bureaucrat(): name_("Default Bureaucrat"), grade_(1)
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade): name_(name), grade_(grade)
 {
-	std::cout << "Bureaucrat copy constructor called" << std::endl;
+	std::cout << "Bureaucrat " << name_ << " parameterized constructor called" << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException("Grade is too high!");
 	else if (grade > 150)

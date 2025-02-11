@@ -7,7 +7,7 @@ Form::Form(): name_("Default Form"), isSigned_(false), gradeToSign_(42), gradeTo
 
 Form::Form(const std::string& name, int gradeToSign, int gradeToExecute): name_(name), isSigned_(false), gradeToSign_(gradeToSign), gradeToExecute_(gradeToExecute)
 {
-	std::cout << "Form copy constructor called" << std::endl;
+	std::cout << "Form " << name_ << " parameterized constructor called" << std::endl;
 	if (gradeToSign < 1)
 		throw GradeTooHighException("GradeToSign is too high!");
 	else if (gradeToSign > 150)
