@@ -6,11 +6,11 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2025/02/11 16:50:47 by jtu              ###   ########.fr        #
+#    Updated: 2025/02/16 16:05:32 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Intern
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
@@ -18,6 +18,7 @@ SRCS =	main.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp \
+		Intern.cpp
 
 OBJS_DIR = ./obj
 

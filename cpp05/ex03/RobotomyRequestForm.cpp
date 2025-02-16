@@ -34,7 +34,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	if (!getIsSigned())
 		throw FormNotSignedException("Form is not signed! Can't be executed.");
 	if (executor.getGrade() > getGradeToExecute())
-		throw GradeTooLowException("Executor's grade is too low to execute the form");
+		throw GradeTooLowException("their grade is too low to execute the form");
 	std::cout << "* Drilling noises... *" << std::endl;
 	std::srand(std::time(0));
 	if (rand() % 2 == 0)

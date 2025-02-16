@@ -33,7 +33,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	if (!getIsSigned())
 		throw FormNotSignedException("Form is not signed! Can't be executed.");
 	if (executor.getGrade() > getGradeToExecute())
-		throw GradeTooLowException("Executor's grade is too low to execute the form");
+		throw GradeTooLowException("their grade is too low to execute the form");
 	std::ofstream file(getTarget() + "_shrubbery");
 	if (!file)
 		throw std::runtime_error("There's something wrong with creating shrubbery file");
