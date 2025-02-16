@@ -13,7 +13,7 @@ int main() {
         b1.incrementGrade();  // Should throw GradeTooHighException
     }
     catch (const std::exception& e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     std::cout << "==== TEST 2 ====" << std::endl;
@@ -27,7 +27,7 @@ int main() {
         b2.decrementGrade();  // Should throw GradeTooLowException
     }
     catch (const std::exception& e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     std::cout << "==== TEST 3 ====" << std::endl;
@@ -35,7 +35,7 @@ int main() {
         Bureaucrat b3("Charlie", 0);  // Invalid grade, should throw GradeTooHighException
     }
     catch (const std::exception& e) {
-        std::cerr << "Exception caught during instantiation: " << e.what() << std::endl;
+        std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     return 0;

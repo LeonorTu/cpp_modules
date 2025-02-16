@@ -6,24 +6,24 @@
 class Bureaucrat;
 
 class Form {
-  private:
-    const std::string name_;
-    bool isSigned_;
-    const int gradeToSign_;
-    const int gradeToExecute_;
+	private:
+		const std::string name_;
+		bool isSigned_;
+		const int gradeToSign_;
+		const int gradeToExecute_;
 
-  public:
-    Form();
-    Form(const std::string& name, int gradeToSign, int gradeToExecute);
-    Form(const Form& other);
-    Form& operator=(const Form& other);
-    ~Form();
-    std::string getName() const;
-    bool getIsSigned() const;
-    int getGradeToSign() const;
-    int getGradeToExecute() const;
-    void beSigned(Bureaucrat& bureaucrat);
-    class GradeTooHighException : public std::exception{
+	public:
+		Form();
+		Form(const std::string& name, int gradeToSign, int gradeToExecute);
+		Form(const Form& other);
+		Form& operator=(const Form& other);
+		~Form();
+		std::string getName() const;
+		bool getIsSigned() const;
+		int getGradeToSign() const;
+		int getGradeToExecute() const;
+		void beSigned(Bureaucrat& bureaucrat);
+		class GradeTooHighException : public std::exception{
 			private:
 				std::string	message_;
 			public:
