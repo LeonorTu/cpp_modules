@@ -5,15 +5,8 @@
 
 class Base
 {
-	private:
-
-
 	public:
-		Base();
-		Base(const Base& other);
-		Base& operator=(const Base& other);
-		~Base();
-
+		virtual ~Base();
 };
 
 #endif
