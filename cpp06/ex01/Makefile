@@ -6,15 +6,14 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2025/02/16 19:41:48 by jtu              ###   ########.fr        #
+#    Updated: 2025/02/17 14:40:10 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScalarConverter
+NAME = Serializer
 
 SRCS =	main.cpp \
-		ScalarConverter.cpp
-
+		Serializer.cpp 
 
 OBJS_DIR = ./obj
 
