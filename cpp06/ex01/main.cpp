@@ -7,7 +7,6 @@ int main(void)
 	std::cout << "Original Data object address: " << &data << std::endl;
 	std::cout << "Original Data value: " << data.value << std::endl;
 
-
 	uintptr_t raw = Serializer::serialize(&data);
 	std::cout << "Serialized (uintptr_t) value: " << raw << std::endl;
 

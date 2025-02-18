@@ -23,20 +23,22 @@ Base* generate(void)
 
 void identify(Base* p)
 {
-	Base* test = dynamic_cast<A*>(p);
-	if (test)
+	Base* a = dynamic_cast<A*>(p);
+	if (a)
 	{
 		std::cout << "A\n";
 		return;
 	}
-	test = dynamic_cast<B*>(p);
-	if (test)
+
+	Base* b = dynamic_cast<B*>(p);
+	if (b)
 	{
 		std::cout << "B\n";
 		return;
 	}
-	test = dynamic_cast<C*>(p);
-	if (test)
+	
+	Base* c = dynamic_cast<C*>(p);
+	if (c)
 	{
 		std::cout << "C\n";
 		return;
@@ -47,8 +49,7 @@ void identify(Base& p)
 {
 	try
 	{
-		A& test = dynamic_cast<A&>(p);
-		(void) test;
+		(void)dynamic_cast<A&>(p);
 		std::cout << "A\n";
 		return ;
 	}
@@ -56,8 +57,7 @@ void identify(Base& p)
 
 	try
 	{
-		B& test = dynamic_cast<B&>(p);
-		(void) test;
+		(void)dynamic_cast<B&>(p);
 		std::cout << "B\n";
 		return ;
 	}
@@ -65,8 +65,7 @@ void identify(Base& p)
 
 	try
 	{
-		C& test = dynamic_cast<C&>(p);
-		(void) test;
+		(void)dynamic_cast<C&>(p);
 		std::cout << "C\n";
 		return ;
 	}
@@ -75,7 +74,6 @@ void identify(Base& p)
 
 int main(void)
 {
-
 	std::srand(time(0));
 	for (int i = 0; i < 5; i++)
 	{
