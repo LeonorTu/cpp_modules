@@ -3,7 +3,6 @@
 #include "B.hpp"
 #include "C.hpp"
 
-
 Base* generate(void)
 {
 	switch (std::rand() % 3)
@@ -36,7 +35,7 @@ void identify(Base* p)
 		std::cout << "B\n";
 		return;
 	}
-	
+
 	Base* c = dynamic_cast<C*>(p);
 	if (c)
 	{
