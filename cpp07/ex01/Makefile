@@ -6,13 +6,13 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2025/02/17 16:45:39 by jtu              ###   ########.fr        #
+#    Updated: 2025/02/19 14:22:34 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = template
+NAME = iter
 
-SRCS =	main.cpp 
+SRCS =	main.cpp
 
 OBJS_DIR = ./obj
 
