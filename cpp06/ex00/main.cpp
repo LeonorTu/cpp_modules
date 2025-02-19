@@ -36,22 +36,21 @@ int main() {
 
 	std::cout << "\nTest 12: Pseudo-literal -inff\n";
 	ScalarConverter::convert("-inff");
-	
+
 	std::cout << "\nTest 13: Invalid input hello\n";
 	ScalarConverter::convert("hello");
-	
+
 	std::cout << "\nTest 14: Invalid input nan.0f\n";
 	ScalarConverter::convert("nan.0f");
-	
+
 	std::cout << "\nTest 15: Invalid input -nan\n";
 	ScalarConverter::convert("-nan");
 
 	std::cout << "\nTest 16: Integer (overfloat) 2147483648\n";
 	ScalarConverter::convert("2147483648");
-	
+
 	std::cout << "\nTest 17: Float (overflow) 56456465465464655465456456445184848641531655498897489.0f\n";
 	ScalarConverter::convert("56456465465464655465456456445184848641531655498897489.0f");
-
 
 	std::cout << "\nTest 18: Double 3.5e38\n";
 	ScalarConverter::convert("3500000000000000000000000000000000000");

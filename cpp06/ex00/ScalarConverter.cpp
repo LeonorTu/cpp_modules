@@ -101,15 +101,15 @@ void	ScalarConverter::convert(const std::string& str)
 		else
 				std::cout << "char: Non displayable" << std::endl;
 		if (value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max()) {
-        std::cout << "int: " << static_cast<int>(value) << std::endl;
-    } else {
-        std::cout << "int: impossible" << std::endl;
-    }
+		std::cout << "int: " << static_cast<int>(value) << std::endl;
+	} else {
+		std::cout << "int: impossible" << std::endl;
+	}
 		if (value > std::numeric_limits<float>::max() || value < -std::numeric_limits<float>::max()) {
-        std::cout << "float: impossible" << std::endl;
-    } else {
-        std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
-    }
+		std::cout << "float: impossible" << std::endl;
+	} else {
+		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
+	}
 		if (value > std::numeric_limits<double>::max() || value < -std::numeric_limits<double>::max()) {
 			std::cout << "double: impossible" << std::endl;
 		} else {
@@ -120,6 +120,6 @@ void	ScalarConverter::convert(const std::string& str)
 
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
-  std::cout << "float: impossible" << std::endl;
-  std::cout << "double: impossible" << std::endl;
+	std::cout << "float: impossible" << std::endl;
+	std::cout << "double: impossible" << std::endl;
 }
