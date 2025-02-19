@@ -63,4 +63,23 @@ int	main(void) {
 	{
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
+
+	std::cout << "\n###### Test RobotomyRequestForm Randomness ######" << std::endl;
+    try
+    {
+        Bureaucrat highRank("HighRank", 1);
+        RobotomyRequestForm robot2("target2");
+        std::cout << highRank << std::endl << robot2 << std::endl;
+        highRank.signForm(robot2);
+        std::cout << robot2 << std::endl;
+
+        for (int i = 0; i < 10; ++i)
+        {
+            highRank.executeForm(robot2);
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
 }
