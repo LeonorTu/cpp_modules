@@ -6,11 +6,11 @@
 #    By: jtu <jtu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 17:12:40 by jtu               #+#    #+#              #
-#    Updated: 2025/02/17 10:29:11 by jtu              ###   ########.fr        #
+#    Updated: 2025/02/20 12:50:53 by jtu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScalarConverter
+NAME = convert
 
 SRCS =	main.cpp \
 		ScalarConverter.cpp
