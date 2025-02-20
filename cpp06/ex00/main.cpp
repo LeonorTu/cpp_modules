@@ -55,6 +55,12 @@
 // 	std::cout << "\nTest 18: Double 3.5e38\n";
 // 	ScalarConverter::convert("3500000000000000000000000000000000000");
 
+// 	std::cout << "\nTest 19: Invalid input 20.5ff\n";
+// 	ScalarConverter::convert("20.5ff");
+
+// 	std::cout << "\nTest 18: Invalid input 12.4.5\n";
+// 	ScalarConverter::convert("12.4.5");
+
 // 	return 0;
 // }
 
