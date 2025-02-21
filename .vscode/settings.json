@@ -53,6 +53,7 @@
     "charconv": "cpp",
     "chrono": "cpp",
     "format": "cpp",
-    "ratio": "cpp"
+    "ratio": "cpp",
+    "list": "cpp"
   }
 }
