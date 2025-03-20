@@ -10,9 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = span
 
-SRCS =	main.cpp
+SRCS =	main.cpp\
+		Span.cpp
 
 OBJS_DIR = ./obj
 
