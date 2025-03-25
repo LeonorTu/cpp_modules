@@ -41,7 +41,7 @@ void BitcoinExchange::loadDatabase(const std::string &filename) {
 float BitcoinExchange::getExchangeRate(const std::string &date) const {
   // upper_bound(date)finds the first element strictly greater than the given
   // date, lower_bound(date) finds the first element greater than or equal to
-  // the given date ???
+  // the given date
   auto it = exchangeRates.upper_bound(date);
 
   if (it == exchangeRates.begin()) {
@@ -95,15 +95,20 @@ float BitcoinExchange::processInput(const std::string &date,
 
 void BitcoinExchange::processInputFile(const std::string &filename) const {
   std::ifstream file(filename.c_str());
-  if (!file.is_open()) {
+  if (!file.is_open()) 
     throw std::runtime_error("Error: could not open file.");
-  }
-  std::string line;
+  
+	std::string line;
   std::getline(file, line);
   if (line != "date | value")
-    std::cout << "Warning: Unexpected header format" << std::endl;
+    throw std::runtime_error("Unexpected header format");
 
   while (std::getline(file, line)) {
+		if (line.empty())
+		{
+			std::cout << "Error: empty line"  << std::endl;
+			continue;
+		}
     size_t pipePos = line.find(" | ");
     if (pipePos == std::string::npos) {
       std::cout << "Error: bad input => " << line << std::endl;
@@ -111,6 +116,12 @@ void BitcoinExchange::processInputFile(const std::string &filename) const {
     }
     std::string date = line.substr(0, pipePos);
     std::string valueStr = line.substr(pipePos + 3);
+
+		if (date.find_first_not_of(" \t\n\v\f\r") != 0 || date.find_last_not_of(" \t\n\v\f\r") != date.length() - 1 ||
+        valueStr.find_first_not_of(" \t\n\v\f\r") != 0 || valueStr.find_last_not_of(" \t\n\v\f\r") != valueStr.length() - 1) {
+      std::cout << "Error: bad input => " << line << std::endl;
+      continue;
+		}
 
     try {
       size_t idx;
