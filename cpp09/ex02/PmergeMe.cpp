@@ -6,50 +6,74 @@ PmergeMe::PmergeMe()
 PmergeMe::~PmergeMe()
 {}
 
-void PmergeMe::parse(int argc, char **argv)
+void PmergeMe::run(int argc, char **argv)
 {
-    _vector.clear();
-    _deque.clear();
-
-    for (int i = 1; i < argc; ++i) {
-        std::istringstream iss(argv[i]);
-        int num;
-        if (!(iss >> num) || !iss.eof() || num < 0)
-            throw std::runtime_error("Error: only positive integer is allowed");
-
-        _vector.push_back(num);
-        _deque.push_back(num);
-    }
-    sortDisplay(argc, argv);
+    displayBefore(argc, argv);
+    parseAndSorts(argc, argv);
 }
 
-void PmergeMe::sortDisplay(int argc, char **argv)
+void PmergeMe::displayBefore(int argc, char **argv)
 {
-    clock_t startDeque = clock();
-    mergeInsertionDeque(0, _deque.size());
-    clock_t endDeque = clock();
     std::cout << "Before: ";
     for (int i = 1; i < argc && i <= 10; ++i)
         std::cout << argv[i] << " ";
     if (argc > 10)
         std::cout << "[...]";
     std::cout << std::endl;
+}
+
+void PmergeMe::displayAfter(const std::deque<int> &container)
+{
     std::cout << "After: ";
-    for (size_t i = 0; i < _deque.size() && i < 10; ++i)
-        std::cout << _deque[i] << " ";
-    if (_deque.size() > 10)
+    for (size_t i = 0; i < container.size() && i < 10; ++i)
+        std::cout << container[i] << " ";
+    if (container.size() > 10)
         std::cout << "[...]";
     std::cout << std::endl;
+}
 
-    std::cout << "Time to process a range of " << _deque.size()
-              << " elements with std::vector : " << std::fixed << std::setprecision(5)
-              << endDeque - startDeque << " us" << std::endl;
-    clock_t startVector = clock();
+void PmergeMe::parseAndSorts(int argc, char **argv)
+{
+    // Process with deque
+    _deque.clear();
+    auto startDeque = std::chrono::high_resolution_clock::now();
+    parseNumbers(argc, argv, _deque);
+    mergeInsertionDeque(0, _deque.size());
+    auto endDeque = std::chrono::high_resolution_clock::now();
+    auto dequeTime =
+        std::chrono::duration_cast<std::chrono::microseconds>(endDeque - startDeque).count();
+    displayAfter(_deque);
+    displayTime(_deque.size(), "std::deque", dequeTime);
+
+    // Process with vector
+    _vector.clear();
+    auto startVector = std::chrono::high_resolution_clock::now();
+    parseNumbers(argc, argv, _vector);
     mergeInsertionVector(0, _vector.size());
-    clock_t endVector = clock();
-    std::cout << "Time to process a range of " << _vector.size()
-              << " elements with std::vector : " << std::fixed << std::setprecision(5)
-              << endVector - startVector << " us" << std::endl;
+    auto endVector = std::chrono::high_resolution_clock::now();
+    auto vectorTime =
+        std::chrono::duration_cast<std::chrono::microseconds>(endVector - startVector).count();
+    displayTime(_vector.size(), "std::vector", vectorTime);
+}
+
+// Parse numbers from arguments into a container
+template <typename Container>
+void PmergeMe::parseNumbers(int argc, char **argv, Container &container)
+{
+    for (int i = 1; i < argc; ++i) {
+        std::istringstream iss(argv[i]);
+        int num;
+        if (!(iss >> num) || !iss.eof() || num < 0)
+            throw std::runtime_error("Error: only positive integer is allowed");
+
+        container.push_back(num);
+    }
+}
+
+void PmergeMe::displayTime(size_t size, const std::string &containerName, double timeUs)
+{
+    std::cout << "Time to process a range of " << size << " elements with " << containerName
+              << " : " << std::fixed << std::setprecision(5) << timeUs << " us" << std::endl;
 }
 
 void PmergeMe::mergeInsertionDeque(size_t begin, size_t end)
@@ -138,7 +162,7 @@ void PmergeMe::insertionVector(size_t begin, size_t end)
 
 void PmergeMe::mergeInsertSortDeque(size_t begin, size_t end)
 {
-    if (end - begin <= 10) { // Use insertion sort for small subarrays
+    if (end - begin <= 10) {
         insertionDeque(begin, end);
         return;
     }
@@ -151,7 +175,7 @@ void PmergeMe::mergeInsertSortDeque(size_t begin, size_t end)
 
 void PmergeMe::mergeInsertSortVector(size_t begin, size_t end)
 {
-    if (end - begin <= 10) { // Use insertion sort for small subarrays
+    if (end - begin <= 10) {
         insertionVector(begin, end);
         return;
     }
