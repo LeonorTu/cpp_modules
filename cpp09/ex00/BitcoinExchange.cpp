@@ -105,6 +105,11 @@ float BitcoinExchange::processInput(const std::string &date, float value) const
 
 void BitcoinExchange::processInputFile(const std::string &filename) const
 {
+    struct stat path_stat;
+    if (stat(filename.c_str(), &path_stat) == 0 && S_ISDIR(path_stat.st_mode)) {
+        throw std::runtime_error("Error: path is a directory, not a file.");
+    }
+
     std::ifstream file(filename.c_str());
     if (!file.is_open())
         throw std::runtime_error("Error: could not open file.");
