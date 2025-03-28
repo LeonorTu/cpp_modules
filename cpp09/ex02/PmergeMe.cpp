@@ -70,10 +70,10 @@ void PmergeMe::parseNumbers(int argc, char **argv, Container &container)
     }
 }
 
-void PmergeMe::displayTime(size_t size, const std::string &containerName, double timeUs)
+void PmergeMe::displayTime(size_t size, const std::string &containerName, double time)
 {
     std::cout << "Time to process a range of " << size << " elements with " << containerName
-              << " : " << std::fixed << std::setprecision(5) << timeUs << " us" << std::endl;
+              << " : " << std::fixed << std::setprecision(5) << time << " us" << std::endl;
 }
 
 void PmergeMe::mergeInsertionDeque(size_t begin, size_t end)
@@ -122,7 +122,7 @@ void PmergeMe::mergeDeque(size_t begin, size_t mid, size_t end)
 
 void PmergeMe::mergeVector(size_t begin, size_t mid, size_t end)
 {
-    std::deque<int> temp(_vector.begin() + begin, _vector.begin() + end);
+    std::vector<int> temp(_vector.begin() + begin, _vector.begin() + end);
     size_t i = 0, j = mid - begin, k = begin;
     while (i < mid - begin && j < end - begin) {
         if (temp[i] <= temp[j]) {
@@ -158,30 +158,4 @@ void PmergeMe::insertionVector(size_t begin, size_t end)
             _vector[j] = _vector[j - 1];
         _vector[j] = key;
     }
-}
-
-void PmergeMe::mergeInsertSortDeque(size_t begin, size_t end)
-{
-    if (end - begin <= 10) {
-        insertionDeque(begin, end);
-        return;
-    }
-
-    size_t mid = (begin + end) / 2;
-    mergeInsertSortDeque(begin, mid);
-    mergeInsertSortDeque(mid, end);
-    mergeDeque(begin, mid, end);
-}
-
-void PmergeMe::mergeInsertSortVector(size_t begin, size_t end)
-{
-    if (end - begin <= 10) {
-        insertionVector(begin, end);
-        return;
-    }
-
-    size_t mid = (begin + end) / 2;
-    mergeInsertSortVector(begin, mid);
-    mergeInsertSortVector(mid, end);
-    mergeVector(begin, mid, end);
 }
