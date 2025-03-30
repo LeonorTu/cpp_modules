@@ -50,9 +50,10 @@ float RPN::evaluate(const std::string &expression)
             try {
                 std::istringstream iss(token);
                 float number;
-                if (!(iss >> number) || !iss.eof()) {
+                if (!(iss >> number) || !iss.eof())
                     throw std::runtime_error("Error: Invalid token");
-                }
+                if (number > 10 || number < 0)
+                    throw std::runtime_error("Number must be between 0 and 10");
                 stack.push(number);
             }
             catch (const std::exception &) {
