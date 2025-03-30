@@ -80,6 +80,17 @@ bool BitcoinExchange::isValidDate(const std::string &date) const
             if (day > (isLeap ? 29 : 28))
                 return false;
         }
+        // Check if the date is in the future
+        std::time_t t = std::time(nullptr);
+        std::tm *currentTime = std::localtime(&t);
+        int currentYear = currentTime->tm_year + 1900;
+        int currentMonth = currentTime->tm_mon + 1;
+        int currentDay = currentTime->tm_mday;
+
+        if (year > currentYear || (year == currentYear && month > currentMonth) ||
+            (year == currentYear && month == currentMonth && day > currentDay)) {
+            return false;
+        }
         return true;
     }
     catch (const std::exception &) {
